@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Architectural Portal - Project Alpha</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#ffffff",
+                    "primary-fixed": "#d3e3ff",
+                    "surface-tint": "#0060ab",
+                    "tertiary-container": "#bc5b00",
+                    "surface": "#faf9f8",
+                    "on-tertiary-fixed-variant": "#743500",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#004883",
+                    "on-surface-variant": "#404752",
+                    "secondary-fixed-dim": "#adc8f2",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "secondary": "#456084",
+                    "on-tertiary-container": "#ffffff",
+                    "on-secondary-fixed-variant": "#2d486b",
+                    "surface-container": "#efeeed",
+                    "tertiary-fixed": "#ffdbc8",
+                    "on-secondary-fixed": "#001c39",
+                    "outline-variant": "#c0c7d4",
+                    "inverse-primary": "#a3c9ff",
+                    "surface-variant": "#e3e2e1",
+                    "secondary-fixed": "#d3e3ff",
+                    "surface-bright": "#faf9f8",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f1f0ef",
+                    "on-tertiary-fixed": "#311300",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e9e8e7",
+                    "on-background": "#1a1c1c",
+                    "tertiary": "#974700",
+                    "primary-fixed-dim": "#a3c9ff",
+                    "primary": "#005faa",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb689",
+                    "surface-dim": "#dadad9",
+                    "on-primary-fixed": "#001c39",
+                    "on-secondary-container": "#405b7f",
+                    "secondary-container": "#b8d3fd",
+                    "inverse-surface": "#2f3130",
+                    "surface-container-low": "#f4f3f2",
+                    "surface-container-highest": "#e3e2e1",
+                    "primary-container": "#0078d4",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#717783",
+                    "background": "#faf9f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(250, 249, 248, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 glass-header shadow-sm flex items-center justify-between px-6 py-3 w-full font-['Plus_Jakarta_Sans'] font-semibold tracking-tight">
+<div class="flex items-center gap-8">
+<div class="text-xl font-bold text-neutral-900 dark:text-neutral-50">Architectural Portal</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors duration-200 ease-in-out py-1" href="#">Dashboard</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-600 py-1" href="#">Projects</a>
+<a class="text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors duration-200 ease-in-out py-1" href="#">Resources</a>
+<a class="text-neutral-600 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors duration-200 ease-in-out py-1" href="#">Insights</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="bg-surface-container-low border-none rounded-md pl-10 pr-4 py-1.5 text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Search..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-neutral-600 hover:bg-neutral-50 p-2 rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined text-neutral-600 hover:bg-neutral-50 p-2 rounded-full transition-colors">settings</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant/20" data-alt="professional portrait of a male architect in a neutral studio setting with soft natural lighting and minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI7qLL-8LExbXKXKpEYImt_3bokeNpjwoSI4z0yhqr658Vg87oYZRcEUQvNQy2iAFyUWlwwjY74FdkAvzXeFIauJMBw9hbOtSJqi1gKj-87vZYdUEvzAze7PVQrE1dT69mN276U3wEE0EgY03CZkdmlsu6ciBobrqece5QVMqb_JmoSU4eJxhPP3ZQYyCNOuGMd_a2FoGXQYM4u0ECFGMPTuo2DLsPT0YJ8xjX2swkBw4I6JeWbZ0oirOFcO5YmEZ4QiaXoDdFleM"/>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 border-r border-neutral-200/50 dark:border-neutral-800/50 bg-neutral-50 dark:bg-neutral-950 flex flex-col py-4 h-full font-['Inter'] text-sm hidden lg:flex">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div>
+<div class="font-['Plus_Jakarta_Sans'] font-bold text-neutral-900 dark:text-neutral-50 text-base">Project Alpha</div>
+<div class="text-[10px] uppercase tracking-wider text-neutral-500 font-semibold">Enterprise Resource Planning</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 px-4 py-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 transition-all duration-150 mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">grid_view</span> Home
+                </a>
+<a class="flex items-center gap-3 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-lg mx-2 px-4 py-2 font-semibold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_tree</span> Active Workspace
+                </a>
+<a class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 px-4 py-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 transition-all duration-150 mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">folder_open</span> Site Contents
+                </a>
+<a class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 px-4 py-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 transition-all duration-150 mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">trending_up</span> Analytics
+                </a>
+<a class="flex items-center gap-3 text-neutral-600 dark:text-neutral-400 px-4 py-2 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 transition-all duration-150 mx-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">inventory_2</span> Archive
+                </a>
+</nav>
+<div class="mt-auto px-6 pt-4 border-t border-neutral-200/30">
+<div class="flex items-center justify-between text-neutral-500 mb-4">
+<span class="text-xs font-semibold">STORAGE</span>
+<span class="text-xs">82%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[82%]"></div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area (SharePoint-like Interface) -->
+<main class="flex-1 overflow-y-auto bg-surface-container-low">
+<!-- SharePoint Tab Navigation -->
+<div class="bg-surface-container-lowest px-8 pt-4">
+<div class="flex items-center gap-8 border-b border-outline-variant/15">
+<button class="px-4 py-3 text-sm font-semibold text-primary relative">
+                        Page
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-primary rounded-t-full"></div>
+</button>
+<button class="px-4 py-3 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Documents</button>
+<button class="px-4 py-3 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Conversations</button>
+<button class="px-4 py-3 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Notebook</button>
+</div>
+</div>
+<!-- Page Content Canvas -->
+<div class="max-w-6xl mx-auto p-8">
+<!-- Page Header Card -->
+<div class="relative h-[320px] rounded-xl overflow-hidden shadow-sm mb-8">
+<img alt="Modern architecture" class="w-full h-full object-cover" data-alt="wide angle shot of a modern glass skyscraper reflecting the blue sky and soft white clouds during daytime" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVuw_hLtSYv6qhb_mieLif2eSzozQ0_S5r0alp0F7Yuq-u6-rg9us8BXQIe0HbAY3Tu5KJ_yGDpULxuxumyAp94cF1Sz2YPCb-UdSvkxD7JtuwQUsAkae_kV-dZMlwAB8S27AOXyS4otjAbQiBsAGw_FT_7mqQteVr74fhh9bHvsKQBsOERMbmRVw2_1KZpwaU9YPkYyUgqEl0tAMjUyBbCQWUWTCxBXHow8jQgqDMsn5ZiWbInGI5As9U7Bdy6ULFBa4XVe6vQfE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-12">
+<div class="max-w-3xl">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary-container/90 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded tracking-widest uppercase">INTERNAL REPORT</span>
+<span class="text-white/80 text-xs font-medium">Updated 2 hours ago</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold text-white leading-tight">Q4 Sustainable Development &amp; Architectural Integrity Review</h1>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Main Body Column -->
+<div class="xl:col-span-2 space-y-8">
+<section class="bg-surface-container-lowest p-10 rounded-xl">
+<h2 class="text-2xl font-headline font-bold mb-6 text-on-surface">Executive Summary</h2>
+<div class="prose prose-neutral max-w-none text-on-surface-variant leading-relaxed font-body">
+<p class="mb-4">The architectural landscape of Project Alpha has undergone significant refinement in the final quarter. Our focus has shifted toward integrating <strong>biophilic design principles</strong> while maintaining the structural rigour expected of enterprise-grade facilities. This report outlines the transition from conventional concrete structures to more sustainable, adaptive frameworks.</p>
+<p class="mb-4">We have successfully implemented the new tonal palette across all primary site contents, achieving a 15% increase in visual accessibility scores. The "No-Line" rule has been strictly enforced, leading to a more fluid and less cluttered user experience across the portal's digital twins.</p>
+<blockquote class="border-l-4 border-primary-fixed-dim pl-6 py-2 italic text-on-surface font-medium bg-surface-container-low/50 rounded-r-lg my-6">
+                                    "Innovation in architecture is not merely about the materials we use, but the space we leave behind for future generations."
+                                </blockquote>
+<p>Key milestones achieved this month include the finalization of the glassmorphic atrium design for the central hub and the successful stress-testing of the modular resource pillars.</p>
+</div>
+</section>
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-blue-50 text-primary rounded-lg">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<span class="text-xs font-bold text-tertiary">+12%</span>
+</div>
+<div class="text-2xl font-bold text-on-surface">94.2%</div>
+<div class="text-xs text-neutral-500">Resource Efficiency</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-blue-50 text-primary rounded-lg">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<span class="text-xs font-bold text-green-600">A+ Grade</span>
+</div>
+<div class="text-2xl font-bold text-on-surface">Carbon Neutral</div>
+<div class="text-xs text-neutral-500">Environmental Impact</div>
+</div>
+</div>
+</div>
+<!-- Sidebar / Quick Links Column -->
+<div class="space-y-6">
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+<h3 class="text-sm font-bold uppercase tracking-widest text-neutral-400 mb-6">Quick Links</h3>
+<nav class="space-y-1">
+<a class="flex items-center justify-between group p-3 hover:bg-surface-container-low rounded-lg transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">description</span>
+<span class="text-sm font-semibold text-on-surface">Design Guidelines</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a class="flex items-center justify-between group p-3 hover:bg-surface-container-low rounded-lg transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">calendar_month</span>
+<span class="text-sm font-semibold text-on-surface">Project Timeline</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a class="flex items-center justify-between group p-3 hover:bg-surface-container-low rounded-lg transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">group</span>
+<span class="text-sm font-semibold text-on-surface">Stakeholder Map</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a class="flex items-center justify-between group p-3 hover:bg-surface-container-low rounded-lg transition-colors" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">cloud_download</span>
+<span class="text-sm font-semibold text-on-surface">Resource Assets</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+</nav>
+</section>
+<section class="bg-primary text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-lg font-bold mb-2">Need Support?</h3>
+<p class="text-white/80 text-xs mb-6">Connect with our architectural specialists for guidance on Project Alpha protocols.</p>
+<button class="bg-white text-primary px-4 py-2 rounded font-bold text-xs uppercase tracking-wider hover:bg-primary-fixed-dim transition-colors">Contact Expert</button>
+</div>
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-[160px]">support_agent</span>
+</div>
+</section>
+<div class="bg-surface-container-highest/30 p-6 rounded-xl">
+<h3 class="text-xs font-bold text-on-surface-variant mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-base">forum</span> RECENT COMMENTS
+                            </h3>
+<div class="space-y-4">
+<div class="flex gap-3">
+<img alt="Reviewer" class="w-8 h-8 rounded-full" data-alt="headshot of a middle-aged woman in a professional suit with a confident and kind expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5q-cNAEZPZWl26_C90oT5zbDk4Byxh844IzLi6llHSfWIJHjVSHbGERtPilbF6oP57t-gwLdmEvX7f7OTD-Rz9FO_BxaJIjyrJ0JhF59xVOzb92VtKdz2XXeh50TjZejIi9zRdhgncCDvhcxu8zWRtXuq2dClosqU7wWp61VIi3xMi831gHkWvMRdVq-EQDQj70SDMnJgjaPoBBE0I3c67ch4C2MjLW8dUdfAadHFQEEZce2dawR6rfPe6Tdi01PZ5GnbjtJQKWE"/>
+<div>
+<div class="text-xs font-bold">Sarah Jenkins</div>
+<div class="text-[11px] text-on-surface-variant">Great progress on the sustainability metrics. The biophilic elements look promising.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-neutral-100 dark:bg-neutral-900 flex justify-between items-center px-8 py-4 w-full border-t border-neutral-200 dark:border-neutral-800 font-['Inter'] text-xs text-neutral-500">
+<div>© 2024 Enterprise Architecture. All rights reserved.</div>
+<div class="flex items-center gap-6">
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-opacity" href="#">Terms of Service</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-blue-600 dark:hover:text-blue-400 transition-opacity" href="#">Help Center</a>
+</div>
+</footer>
+<!-- FAB (Suppressed on Details screen per mandate, but logic included if Home was active) -->
+<!-- The FAB is suppressed here because this is a focused 'Page View' detail screen. -->
+</body></html>

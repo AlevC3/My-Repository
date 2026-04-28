@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<title>SQL to New Stack Flow</title>
+
+<style>
+:root {
+  --primary: #0176d3;
+  --secondary: #f4f6f9;
+  --success: #2e844a;
+  --warning: #fe9339;
+  --border: #d8dde6;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  padding: 30px;
+}
+
+.flowchart {
+  max-width: 900px;
+  margin: auto;
+}
+
+.step {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--primary);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.meta {
+  font-size: 13px;
+  colour: #5e6a75;
+  margin-top: 4px;
+}
+
+.details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  margin-top: 10px;
+}
+
+.step.open .details {
+  max-height: 500px;
+}
+
+.details ul {
+  margin: 10px 0 0 18px;
+}
+
+.expected {
+  background: var(--secondary);
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.decision {
+  border-left-colour: var(--warning);
+}
+
+.system {
+  border-left-colour: var(--success);
+}
+
+.arrow {
+  text-align: centre;
+  font-size: 26px;
+  colour: #999;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="flowchart">
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <h3>1. AE Reviews the SQL Lead</h3>
+    <div class="meta">Trigger: Lead assigned to AE | Owner: Account Executive</div>
+    <div class="details">
+      <ul>
+        <li>Navigate to the lead in the Old Salesforce instance</li>
+        <li>Assess lead validity and readiness for conversion</li>
+        <li>If more qualification is needed, return to ODR</li>
+      </ul>
+      <div class="expected"><strong>Expected Result:</strong> Lead details available with AE</div>
+    </div>
+  </div>
+
+  <div class="arrow">⬇</div>
+
+  <!-- STEP 2 -->
+  <div class="step decision">
+    <h3>2. Determine if Lead Belongs in New Stack</h3>
+    <div class="meta">Trigger: Lead review assessment | Owner: Account Executive</div>
+    <div class="details">
+      <ul>
+        <li>Evaluate market / region (e.g. Canada Commercial)</li>
+        <li>Confirm product or segment alignment</li>
+        <li>Check duplication or data quality issues</li>
+        <li>If valid → proceed</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="arrow">⬇</div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <h3>3. Flag Lead as New Stack Record</h3>
+    <div class="meta">Trigger: Preconditions cleared | Owner: Account Executive</div>
+    <div class="details">
+      <ul>
+        <li>Locate “New Stack Record” checkbox on lead</li>
+        <li>Select checkbox</li>
+      </ul>
+      <div class="expected">
+        <strong>Expected Result:</strong> “Sync to New Stack” button appears
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">⬇</div>
+
+  <!-- STEP 4 -->
+  <div class="step system">
+    <h3>4. Execute Sync to New Stack</h3>
+    <div class="meta">Owner: Account Executive</div>
+    <div class="details">
+      <ul>
+        <li>Click “Sync to New Stack”</li>
+        <li>System creates lead in new instance</li>
+        <li>Lead enters Sales Working (SWL) stage</li>
+        <li>Fields mapped (~800 → ~100)</li>
+        <li>Einstein Activity Capture enabled</li>
+      </ul>
+      <div class="expected">
+        <strong>Expected Result:</strong> Lead synced to New Stack
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">⬇</div>
+
+  <!-- STEP 5 -->
+  <div class="step">
+    <h3>5. Lead Conversion Initiation</h3>
+    <div class="meta">Trigger: Lead synced | Owner: Account Executive</div>
+    <div class="details">
+      <ul>
+        <li>Verify synced lead details</li>
+        <li>Assign lead to an owner (not a queue)</li>
+        <li>Click “Convert Lead”</li>
+      </ul>
+      <div class="expected">
+        <strong>Expected Result:</strong> Lead conversion initiated. AE continues work fully in New Stack.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const steps = document.querySelectorAll(".step");
+
+// Sequential reveal
+steps.forEach((step, index) => {
+  setTimeout(() => {
+    step.classList.add("visible");
+  }, index * 500);
+});
+
+// Click to expand
+steps.forEach(step => {
+  step.addEventListener("click", () => {
+    step.classList.toggle("open");
+  });
+});
+</script>
+
+</body>
+</html>
