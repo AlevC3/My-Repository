@@ -2,40 +2,168 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Prototype</title>
+  <title>AlevC3 – Slightly Serious Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #1b1f3b;
-      color: white;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #0f1026;
+      color: #ffffff;
+      line-height: 1.6;
     }
+
+    /* Top nav */
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
       background: linear-gradient(90deg, #4b2e83, #0077c8);
-      padding: 14px;
+      padding: 14px 20px;
       display: flex;
-      justify-content: space-around;
+      gap: 20px;
+      font-weight: 600;
     }
+
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      background: radial-gradient(circle at top, #1b4fd6, #0f1026);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .card {
+      background: #171b3b;
+      padding: 24px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Small fun touches */
+    .emoji {
+      font-size: 1.3rem;
     }
   </style>
 </head>
+
 <body>
 
+<!-- Navigation -->
 <nav>
-  <a href="#overview">Overview</a>
-  <a href="#infra">Infrastructure</a>
-  <a href="#digital">Digital</a>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#ideas">Ideas</a>
+  <a href="#contact">Contact</a>
 </nav>
 
-<section id="overview"><h2>Overview</h2></section>
-<section id="infra"><h2>Infrastructure</h2></section>
-<section id="digital"><h2>Digital</h2></section>
+<!-- Hero -->
+<section id="home" class="hero">
+  <h1>Hi, I’m Alev 👋</h1>
+  <p>
+    This is a portfolio.  
+    It contains experiments, ideas, and the occasional good decision.
+  </p>
+  <p class="emoji">💡 ☕ 🔧</p>
+</section>
+
+<!-- About -->
+<section id="about">
+  <h2>About</h2>
+  <p>
+    I enjoy turning complex things into simpler ones — especially when those
+    things live in SharePoint, dashboards, or “please‑don’t‑make‑this‑another‑hero‑banner”.
+  </p>
+  <p>
+    This page exists mostly to test ideas, layouts, and concepts before they
+    become someone else’s governance problem.
+  </p>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>🧭 Navigation Prototypes</h3>
+    <p>
+      Compact, visual navigation concepts designed for very long pages
+      and very impatient users.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>📊 Enablement UX Experiments</h3>
+    <p>
+      Finding ways to make “all the content in one place” feel less like a maze.
+    </p>
+  </div>
+</section>
+
+<!-- Ideas -->
+<section id="ideas">
+  <h2>Ideas / Experiments</h2>
+
+  <div class="card">
+    <h3>🤖 AI‑assisted content ideas</h3>
+    <p>
+      Exploring where AI actually helps, and where it just adds another button.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>🎨 Visual hierarchy tests</h3>
+    <p>
+      How much space is *too much* space?  
+      (Answer depends on how many heroes are involved.)
+    </p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    Find me on GitHub, LinkedIn, or wherever people discuss layouts politely.
+  </p>
+</section>
+
+<footer>
+  Built with HTML, CSS, and very realistic expectations.
+</footer>
 
 </body>
 </html>
